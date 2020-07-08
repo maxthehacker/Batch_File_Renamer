@@ -1,4 +1,4 @@
-""" import pytesseract
+import pytesseract
 from PIL import Image
 pytesseract.pytesseract.tesseract_cmd = r"C:/Program Files/Tesseract-OCR/tesseract.exe"
 
@@ -8,7 +8,7 @@ req_str = 'Swetha Swaminathan'
 if(req_str in img_data):
     print(1)
 else:
-    print(0) """    
+    print(0)  
 
 
 
