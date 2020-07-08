@@ -1,8 +1,8 @@
-#Simple script for renaming files in batches
+# Simple script for renaming files in batches
 
 This is a simple python script that takes input from a txt file and changes the part of the names of multiple files
 
-##Instructions
+## Instructions
 
 Place files in the **input** folder and add data in **data.txt**
 
