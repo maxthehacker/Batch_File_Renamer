@@ -1,12 +1,20 @@
 import os
 import time
+import pytesseract
+from PIL import Image
+from OCR import match
+pytesseract.pytesseract.tesseract_cmd = r"C:/Program Files/Tesseract-OCR/tesseract.exe"
 
-array = []
 
 with open('data.txt') as file:
-    array = file.readlines()
+    array = file.read().split()
+    print(array)
+    
 
 data = [s.strip('\n') for s in array]
+for i in range(len(data)):
+    data[i] = data[i].lower()
+
 data_path = os.listdir("./input")
 start = time.time()
 def main():
@@ -14,12 +22,13 @@ def main():
 
     for i in range(len(data_path)):
         filename = data_path[i]
-        name = data[i]
-        dst_init = event_name + '_' + name + ".jpg"
         src = './input/' + filename
-        dst = './input/' + dst_init
+        name = match(data,src)
+        """print(name)"""
+        suffix = event_name + name + '.jpg'
+        dst = './input/' + suffix
         os.rename(src,dst)
-        print(f'renamed {filename} to {dst_init}')
+        print(f'renamed {filename} to {suffix}')
 if __name__ == '__main__':
     main()
 else:
