@@ -6,7 +6,7 @@ Uses tesseract-OCR to read data from a jpg/png file.
 for now it works with jpg files only. will update the script so you can also mention the file extension.
 
 ## Instructions
-Change path in **config.ini** to tessract.exe in the installation folder of tesseract-ocr on your computer. Default path is C:/Program Files/Tesseract-OCR/tesseract.exe.
+Change path in **config.ini** to tesseract.exe in the installation folder of tesseract-ocr on your computer. Default path is C:/Program Files/Tesseract-OCR/tesseract.exe.
 
 Place files in the **input** folder and add data in **data.txt**.
 
