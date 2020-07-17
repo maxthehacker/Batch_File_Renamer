@@ -1,6 +1,12 @@
 import pytesseract
 from PIL import Image
-pytesseract.pytesseract.tesseract_cmd = r"C:/Program Files/Tesseract-OCR/tesseract.exe"
+from configparser import ConfigParser
+
+config = ConfigParser()
+config.read("./config.ini")
+ocr_path = config['DEFAULT']['path']
+
+pytesseract.pytesseract.tesseract_cmd = f"{ocr_path}"
 
 """ img = Image.open('./input/1.jpg')
 img_data = pytesseract.image_to_string(img)

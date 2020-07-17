@@ -8,7 +8,7 @@ pytesseract.pytesseract.tesseract_cmd = r"C:/Program Files/Tesseract-OCR/tessera
 
 with open('data.txt') as file:
     array = file.read().split()
-    print(array)
+    
     
 
 data = [s.strip('\n') for s in array]
