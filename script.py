@@ -1,32 +1,38 @@
 import os
 import time
 import pytesseract
+import click
 from PIL import Image
 from OCR import match
 pytesseract.pytesseract.tesseract_cmd = r"C:/Program Files/Tesseract-OCR/tesseract.exe"
 
+start = time.time()
 
-with open('data.txt') as file:
-    array = file.read().split()
-    print(array)
+
+@click.command()
+@click.option('--name',required=1)
+@click.option('--data',default='./data.txt')
+@click.option('--input',default='./input')
+@click.option('--dest',default='./input')
+def main(name,data,input,dest):
+    with open('{}'.format(data)) as file:
+        array = file.read().split()
+        print(array)
     
 
-data = [s.strip('\n') for s in array]
-for i in range(len(data)):
-    data[i] = data[i].lower()
+    data = [s.strip('\n') for s in array]
+    for i in range(len(data)):
+        data[i] = data[i].lower()
 
-data_path = os.listdir("./input")
-start = time.time()
-def main():
-    event_name = input('Enter Event Name: ')
+    data_path = os.listdir('{}'.format(input))
+    event_name = '{}'.format(name)
 
     for i in range(len(data_path)):
         filename = data_path[i]
-        src = './input/' + filename
+        src = '{}/'.format(input) + filename
         name = match(data,src)
-        """print(name)"""
-        suffix = event_name + name + '.jpg'
-        dst = './input/' + suffix
+        suffix = event_name + '_' + name + '.jpg'
+        dst = '{}/'.format(dest) + suffix
         os.rename(src,dst)
         print(f'renamed {filename} to {suffix}')
 if __name__ == '__main__':
