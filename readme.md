@@ -9,6 +9,8 @@ for now it works with jpg files only. will update the script so you can also men
 v2: CLI added! read below for more information
 
 ## Instructions
+Change path in config.ini to tesseract.exe in the installation folder of tesseract-ocr on your computer. Default path is C:/Program Files/Tesseract-OCR/tesseract.exe.
+
 
 in v2, i've added CLI to make life easier 😋
 ### usage
