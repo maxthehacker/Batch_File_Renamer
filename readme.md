@@ -27,6 +27,7 @@ There are 4 options for the CLI:
 ## Requirements
 1. [tesseract-OCR](https://github.com/UB-Mannheim/tesseract/wiki)
 2. pytesseract(pip install pytesseract)
+3. PIL(Python Imaging Library)
 
 ## Upcoming Changes
 1. adding a mode to run renamer without tesseract. This would allow to use this for files other than JPEGs.
